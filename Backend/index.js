@@ -10,14 +10,19 @@ const app = express()
 //Adding Middleware for parsing request body
 app.use(express.json())
 
-//middleware for cors policy
+// middleware for cors policy
+// this is specific for "http://localhost:5173"
 // app.use(
 //   cors({
-//     origin: "http//localhost:3000",
+//     origin: "http://localhost:5173",
 //     methods: ["GET", "POST", "PUT", "DELETE"],
 //     allowedHeaders: ["Cotent-Type"],
 //   })
 // )
+
+// middleware for cors policy
+// this allows acces from all urls
+app.use(cors())
 
 app.get("/", (req, res) => {
   console.log(req)
